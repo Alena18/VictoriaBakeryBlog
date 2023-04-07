@@ -1,1 +1,1 @@
-web: gunicorn victoriabakeryi.wsgi
+web: gunicorn victoriabakery.wsgi
