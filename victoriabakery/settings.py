@@ -29,7 +29,8 @@ SECRET_KEY = '7.sisterblog@ydacha'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['victoria-bakery-blog.herokuapp.com', 'localhost']
+ALLOWED_HOSTS = ['8000-alena18-victoriabakerybl-wvl51mst0u.us2.codeanyapp.com', 
+                 'victoria-bakery-blog.herokuapp.com', 'localhost']
 
 
 # Application definition
@@ -43,6 +44,7 @@ INSTALLED_APPS = [
     'cloudinary_storage',
     'django.contrib.staticfiles',
     'cloudinary',
+    'django_summernote',
     'victoriabakeryblog',
 ]
 
