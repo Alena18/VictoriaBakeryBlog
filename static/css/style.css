@@ -1,2 +1,28 @@
 @import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Rubik:ital,wght@0,300;0,400;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Sigmar&display=swap');
 
+header{
+    font-family: Sigmar, sans-serif;
+    height:100%;
+}
+
+#logo{
+    width:10%;
+    margin: 2% 0 0 1%;
+    
+}
+body {
+    background-color: rgb(250, 250, 241);
+    font-family: Rubic, sans-serif;
+    font-size: 150%;
+    color: #520808;
+  
+}
+a {
+    color: #520808;
+}
+
+#menu{
+  letter-spacing: .1vw;
+  line-height: 150px;
+}
