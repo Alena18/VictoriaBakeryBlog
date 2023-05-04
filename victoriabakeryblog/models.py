@@ -14,12 +14,12 @@ class RecipePost(models.Model):
         User, on_delete=models.CASCADE, related_name="blog_posts"
     )
     featured_image = CloudinaryField('image', default='placeholder')
-    excerpt = models.TextField(blank=True)
-    reviews = models.IntegerField(
-        User,  blank=True) #related_name='blogpost_reviews',
+    rate = models.IntegerField(default=0) #related_name='blogpost_rate',
     readtime = models.IntegerField(default=0)
     timestamp = models.DateTimeField(auto_now=False, auto_now_add=True)    
     status = models.IntegerField(choices=STATUS, default=0)
+    thumb_up = models.IntegerField(default=0)
+    thumb_down = models.IntegerField(default=0)
 
     class Meta:
         ordering = ["-created_on"]
@@ -30,9 +30,9 @@ class RecipePost(models.Model):
     def number_of_reviews(self):
         return self.reviews.count()
 
-class UserComments(models.Model):
+class UserComment(models.Model):
     post = models.ForeignKey(RecipePost, on_delete=models.CASCADE,
-                             related_name="comments")
+                             related_name="comment")
     name = models.CharField(max_length=80)
     email = models.EmailField()
     body = models.TextField()
@@ -44,4 +44,6 @@ class UserComments(models.Model):
 
     def __str__(self):
         return f"Comment {self.body} by {self.name}"
+
+
 
