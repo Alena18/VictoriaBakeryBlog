@@ -25,4 +25,11 @@ a {
 #menu{
   letter-spacing: .1vw;
   line-height: 150px;
+  text-align: center;
 }
+
+.connect{
+    font-family: Sigmar, sans-serif;
+    line-height: 30px;
+}
+
