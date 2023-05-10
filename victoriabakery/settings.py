@@ -27,11 +27,11 @@ TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates')
 SECRET_KEY = os.environ.get("SECRET_KEY", "")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = os.environ.get("DEBUG", False)
+DEBUG = os.environ.get("DEBUG", True)
 
 ALLOWED_HOSTS = [
     'victoria-bakery-blog.herokuapp.com', 'localhost',
-    '8000-alena18-victoriabakerybl-e3bku0505p.us2.codeanyapp.com'
+    '8000-alena18-victoriabakerybl-yeyiawp05r.us2.codeanyapp.com',
 ]
 
 
@@ -91,10 +91,14 @@ WSGI_APPLICATION = 'victoriabakery.wsgi.application'
 #     }
 # }
 
-DATABASES = {
-     'default': dj_database_url.parse(os.environ.get("DATABASE_URL"))
- }
+# DATABASES = {
+#      'default': dj_database_url.parse(os.environ.get("DATABASE_URL"))
+#  }
 
+DATABASE_URL = os.getenv('DATABASE_URL')
+DATABASES = {
+    'default': dj_database_url.config(),
+}
 
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html class="h-100" lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,6 +9,7 @@
     <title>VictoriaBakeryBlog</title>
 </head>
 <body>
+    <!-- Navigation -->
     <header>
         <div class="col-sm">
             <a href="index.html"><img src="/static/images/logo.png" alt="VictoriaBakeryBlog logo home page"
@@ -34,6 +35,10 @@
             </div>
           </div>    
     </header>
+
+<!-- {% extends "base.html" %} -->
+
+{% block content %}
 
     <section>
         <div class="container-fluid">
@@ -90,11 +95,6 @@
             </nav>
             {% endif %}
         </div>
-        {%endblock%}
     </section>
 
-    <footer>
-
-    </footer>
-</body>
-</html>
+{% endblock %}

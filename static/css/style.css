@@ -13,7 +13,7 @@ header{
 }
 body {
     background-color: rgb(250, 250, 241);
-    font-family: Rubic, sans-serif;
+    font-family: Rubik, sans-serif;
     font-size: 150%;
     color: #520808;
   
@@ -22,14 +22,48 @@ a {
     color: #520808;
 }
 
-#menu{
+#menu {
   letter-spacing: .1vw;
   line-height: 150px;
   text-align: center;
 }
 
-.connect{
-    font-family: Sigmar, sans-serif;
-    line-height: 30px;
+.connect {
+  font-family: Sigmar, sans-serif;
+  line-height: 30px;
 }
 
+.signup-form {
+    font-family: Rubik, sans-serif;
+    font-size: 60%;
+    }
+
+.signup-form h2 {
+    font-family: Sigmar, sans-serif;
+    font-size: 200%;
+}
+
+.input-text {
+    background-color: rgb(250, 250, 250);
+    background: transparent;
+    width: 18vw;
+    height: 25px;
+    border: 1px solid #520808;
+    border-radius: 2px;
+    }
+
+.feedback {
+    height: 20vh;
+    width: 30vw;
+    }
+
+.button-submit {
+    font-family: Rubik, sans-serif;
+    background-color: #520808;
+    border: 1px solid rgb(250, 250, 250);
+    border-radius: 25% 0%;
+    padding: 8px;
+    color: rgb(250, 250, 241);
+    text-align: center;
+    text-decoration: none;
+    }
