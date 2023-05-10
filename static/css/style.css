@@ -67,3 +67,12 @@ a {
     text-align: center;
     text-decoration: none;
     }
+
+.confirm-text {
+    font-family: 'Permanent Marker', sans-serif;
+    clear: both;
+    line-height: 15vh;
+    text-align: center;
+    font-size: 150%;
+    }
+      
