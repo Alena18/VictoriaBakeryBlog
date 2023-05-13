@@ -27,11 +27,9 @@ class RecipePost(models.Model):
     def __str__(self):
         return self.title
 
-    def number_of_reviews(self):
-        return self.reviews.count()
 
 class UserComment(models.Model):
-    post = models.ForeignKey(RecipePost, on_delete=models.CASCADE,
+    blog = models.ForeignKey(RecipePost, on_delete=models.CASCADE,
                              related_name="comment")
     name = models.CharField(max_length=80)
     email = models.EmailField()
