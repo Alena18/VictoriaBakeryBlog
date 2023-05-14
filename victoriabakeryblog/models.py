@@ -1,6 +1,8 @@
+import readtime
 from django.db import models
 from django.contrib.auth.models import User
 from cloudinary.models import CloudinaryField
+
 
 STATUS = ((0,"Draft"), (1, "Published"))
 
@@ -14,12 +16,16 @@ class RecipePost(models.Model):
         User, on_delete=models.CASCADE, related_name="blog_posts"
     )
     featured_image = CloudinaryField('image', default='placeholder')
-    rate = models.IntegerField(default=0) #related_name='blogpost_rate',
-    readtime = models.IntegerField(default=0)
+    # rate = models.IntegerField(default=0) #related_name='blogpost_rate',
+    read_time = models.IntegerField(default=0)
     timestamp = models.DateTimeField(auto_now=False, auto_now_add=True)    
     status = models.IntegerField(choices=STATUS, default=0)
     # thumb_up = models.IntegerField(default=0)
     # thumb_down = models.IntegerField(default=0)
+
+    def read_time(self):
+      result = readtime.of_text(self.content)
+      return result.text
 
     class Meta:
         ordering = ["-created_on"]
@@ -42,6 +48,3 @@ class UserComment(models.Model):
 
     def __str__(self):
         return f"Comment {self.body} by {self.name}"
-
-
-

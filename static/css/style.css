@@ -1,42 +1,44 @@
 @import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Rubik:ital,wght@0,300;0,400;1,900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Sigmar&display=swap');
 
-header{
+header {
     font-family: Sigmar, sans-serif;
-    height:100%;
+    height: 100%;
 }
 
-#logo{
-    width:10%;
+#logo {
+    width: 10%;
     margin: 2% 0 0 1%;
-    
+
 }
+
 body {
     background-color: rgb(250, 250, 241);
     font-family: Rubik, sans-serif;
     font-size: 150%;
     color: #520808;
-  
+
 }
+
 a {
     color: #520808;
 }
 
 #menu {
-  letter-spacing: .1vw;
-  line-height: 150px;
-  text-align: center;
+    letter-spacing: .1vw;
+    line-height: 150px;
+    text-align: center;
 }
 
 .connect {
-  font-family: Sigmar, sans-serif;
-  line-height: 30px;
+    font-family: Sigmar, sans-serif;
+    line-height: 30px;
 }
 
 .signup-form {
     font-family: Rubik, sans-serif;
     font-size: 60%;
-    }
+}
 
 .signup-form h2 {
     font-family: Sigmar, sans-serif;
@@ -50,12 +52,12 @@ a {
     height: 25px;
     border: 1px solid #520808;
     border-radius: 2px;
-    }
+}
 
 .feedback {
     height: 20vh;
     width: 30vw;
-    }
+}
 
 .button-submit {
     font-family: Rubik, sans-serif;
@@ -66,7 +68,7 @@ a {
     color: rgb(250, 250, 241);
     text-align: center;
     text-decoration: none;
-    }
+}
 
 .confirm-text {
     font-family: 'Permanent Marker', sans-serif;
@@ -74,7 +76,7 @@ a {
     line-height: 15vh;
     text-align: center;
     font-size: 150%;
-    }
+}
 
 #welcome-picture {
     width: 80%;
@@ -88,4 +90,3 @@ a {
     font-family: 'Permanent Marker', sans-serif;
     line-height: 300%;
 }
-      

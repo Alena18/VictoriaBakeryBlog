@@ -5,6 +5,7 @@ from .models import RecipePost
 from django.http import HttpResponse
 
 class BlogPost(generic.ListView):
+
     model = RecipePost
     queryset = RecipePost.objects.filter(status=1).order_by('-created_on')
     template_name = 'recipes.html'
@@ -29,6 +30,14 @@ class BlogDetail(View):
                 "thumb_up": thumb_up
             },
         )
+    def post_detail(request, id):
+       post_detail = get_object_or_404(Post, id=id)
+       context = {
+          'post_detail': post_detail,
+           }
+       return render(request, 'blog_details.html', context)
+
+
 
 def index (request):
     return render(request,'index.html')
@@ -46,4 +55,6 @@ def confirm (request):
     return render(request,'sign_upconfirm.html')
 
 def connect (request):
-    return render(request,'connect.html')   
+    return render(request,'connect.html')
+    
+       
