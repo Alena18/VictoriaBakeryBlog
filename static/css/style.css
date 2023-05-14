@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Rubik:ital,wght@0,300;0,400;1,900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Sigmar&display=swap');
 
+/* Base */
 header {
     font-family: Sigmar, sans-serif;
     height: 100%;
@@ -35,16 +36,51 @@ a {
     line-height: 30px;
 }
 
-.signup-form {
-    font-family: Rubik, sans-serif;
-    font-size: 60%;
-}
+/* forms */
 
-.signup-form h2 {
-    font-family: Sigmar, sans-serif;
+.signup-form {
+    font-family: 'Permanent Marker', sans-serif;
     font-size: 200%;
 }
 
+.signup-form h2 {
+    font-family: 'Permanent Marker', sans-serif;
+    padding-left: 10%;
+    padding-right: 10%;
+    text-align: center;
+    line-height: 120px;
+}
+
+.form {
+    font-family: Rubik, sans-serif;
+    margin-left: 2%;
+    margin-bottom: 3rem;
+    font-size: 80%;
+
+}
+
+.form h1 {
+    font-family: 'Permanent Marker', sans-serif;
+    font-size: 200%;
+    margin-bottom: 2rem;
+    }
+
+.p-form {
+    margin-bottom: 4rem;
+}
+
+#out{
+   text-align: center;
+}
+
+
+#terms {
+    margin-bottom: 2rem;
+}
+
+p {
+    margin-bottom: 2rem;
+}
 .input-text {
     background-color: rgb(250, 250, 250);
     background: transparent;
@@ -57,6 +93,7 @@ a {
 .feedback {
     height: 20vh;
     width: 30vw;
+    margin-bottom: 2rem;
 }
 
 .button-submit {
@@ -89,4 +126,15 @@ a {
     text-align: center;
     font-family: 'Permanent Marker', sans-serif;
     line-height: 300%;
+}
+
+#insta {
+    font-family: Rubik, sans-serif;
+    font-size: 80%;
+    margin-left: 75%;
+}
+
+#icon-insta {
+    font-size: 180%;
+    padding-left: 1%;
 }

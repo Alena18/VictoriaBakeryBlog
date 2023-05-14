@@ -1,17 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/static/css/style.css" type="text/css"/>
-    <title>Connect</title>
-</head>
-<body>
+{% extends "base.html" %}
+
+{% block content %}
         <!-- sign up form -->
-        <section class="connect">
-            <form action="https://formsubmit.co/58b9af38245f1e282b0f65a22bf43856" method="POST" class="signup-form">
-                <h2>Look forward to getting in touch with you</h2>
+        <section class="form">
+            <form action="https://formsubmit.co/58b9af38245f1e282b0f65a22bf43856" method="POST" class="form">
+                <h1>Look forward to getting in touch with you</h1>
     
                 <label for="fname">First Name</label>
                 <br>
@@ -38,5 +31,4 @@
                 
             </form>
         </section>
-</body>
-</html>
+{% endblock %}
