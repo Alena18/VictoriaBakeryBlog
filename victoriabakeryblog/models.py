@@ -18,8 +18,8 @@ class RecipePost(models.Model):
     readtime = models.IntegerField(default=0)
     timestamp = models.DateTimeField(auto_now=False, auto_now_add=True)    
     status = models.IntegerField(choices=STATUS, default=0)
-    thumb_up = models.IntegerField(default=0)
-    thumb_down = models.IntegerField(default=0)
+    # thumb_up = models.IntegerField(default=0)
+    # thumb_down = models.IntegerField(default=0)
 
     class Meta:
         ordering = ["-created_on"]

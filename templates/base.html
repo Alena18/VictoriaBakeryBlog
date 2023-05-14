@@ -15,25 +15,25 @@
     <!-- Navigation -->
     <header>
         <div class="col-sm">
-            <a href="index.html"><img src="/static/logo/logo.png" alt="VictoriaBakeryBlog logo home page"
+            <a href="index.html"><img src="{% static 'images/logo.png' %}" alt="VictoriaBakeryBlog logo home page"
             id="logo"></a>
         </div>
         <div class="container" id="menu">
             <div class="row">
               <div class="col-sm">
-                <a href="index.html">Home</a>
+                <a href="{% url 'index' %}" target="_blank">Home</a>
               </div>
               <div class="col-sm">
-                <a href="#recipe">Recipes</a>
+                <a href="{% url 'recipes' %}" target="_blank">Recipes</a>
               </div>
               <div class="col-sm">
-                <a href="#tips">Tips and tricks</a>
+                <a href="{% url 'tips' %}" target="_blank">Tips and tricks</a>
               </div>
               <div class="col-sm sign_up">
-                <a href="sign_up.html">Sign-up</a>
+                <a href="{% url 'sign_up' %}" target="_blank">Sign-up</a>
               </div>
               <div class="col-sm">
-                <a href="connect.html">Ask me</a>
+                <a href="{% url 'connect' %}" target="_blank">Ask me</a>
               </div>
             </div>
           </div>    

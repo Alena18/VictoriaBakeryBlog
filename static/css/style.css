@@ -76,5 +76,16 @@ a {
     font-size: 150%;
     }
 
- 
+#welcome-picture {
+    width: 80%;
+    border: 10px solid #520808;
+    border-radius: 4px;
+}
+
+#welcome-text {
+    padding-top: 5%;
+    text-align: center;
+    font-family: 'Permanent Marker', sans-serif;
+    line-height: 300%;
+}
       
