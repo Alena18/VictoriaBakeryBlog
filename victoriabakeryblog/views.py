@@ -24,7 +24,7 @@ class BlogDetail(View):
 
         return render(
             request,
-            "recipes.html",
+            "blog_details.html",
             {
                 "post": post,
                 "comments": comment,

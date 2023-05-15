@@ -31,7 +31,7 @@ DEBUG = os.environ.get("DEBUG", True)
 
 ALLOWED_HOSTS = [
     'victoria-bakery-blog.herokuapp.com', 'localhost',
-    '8000-alena18-victoriabakerybl-xlbaj0tkfm.us2.codeanyapp.com',
+    '8000-alena18-victoriabakerybl-sasvsmdzy9.us2.codeanyapp.com',
 ]
 
 
@@ -156,8 +156,8 @@ STATICFILES_DIRS = [
 
  ]
 
-MEDIA_ROOT = [os.path.join(BASE_DIR, 'media')]
-MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'image')
+MEDIA_URL = '/images/'
 DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 
 # Default primary key field type
