@@ -56,5 +56,8 @@ def confirm (request):
 
 def connect (request):
     return render(request,'connect.html')
+
+def askconfirm (request):
+    return render(request,'askconfirm.html')    
     
        

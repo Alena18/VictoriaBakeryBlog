@@ -12,5 +12,5 @@ urlpatterns = [
     path('sign_up.html', views.sign_up, name='sign_up'),
     path('sign_upconfirm.html', views.confirm, name='confirm'),
     path('connect.html', views.connect, name='connect'),
-    path('confirmation.html', views.connect, name='askconfirm'),
+    path('askconfirm.html', views.askconfirm, name='askconfirm'),
 ]
