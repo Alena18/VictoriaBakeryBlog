@@ -13,4 +13,6 @@ urlpatterns = [
     path('sign_upconfirm.html', views.confirm, name='confirm'),
     path('connect.html', views.connect, name='connect'),
     path('askconfirm.html', views.askconfirm, name='askconfirm'),
+    path('blog_details.html', views.blog_details, name='blog_details'),
+
 ]

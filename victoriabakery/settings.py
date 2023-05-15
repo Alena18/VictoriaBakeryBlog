@@ -27,7 +27,7 @@ TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates')
 SECRET_KEY = os.environ.get("SECRET_KEY", "")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = os.environ.get("DEBUG", False)
+DEBUG = os.environ.get("DEBUG", True)
 
 ALLOWED_HOSTS = [
     'victoria-bakery-blog.herokuapp.com', 'localhost',
@@ -152,8 +152,8 @@ USE_TZ = True
 STATIC_URL = '/static/'
 STATICFILES_STORAGE = 'cloudinary_storage.storage.StaticHashedCloudinaryStorage'
 STATICFILES_DIRS = [
-#  os.path.join(BASE_DIR, 'static')
-None
+  os.path.join(BASE_DIR, 'static')
+
  ]
 
 MEDIA_ROOT = [os.path.join(BASE_DIR, 'media')]

@@ -3,6 +3,7 @@ from django.views import generic, View
 from django.views.generic import ListView, DetailView
 from .models import RecipePost
 from django.http import HttpResponse
+from .forms import UserCommentForm
 
 class BlogPost(generic.ListView):
 
@@ -18,22 +19,23 @@ class BlogDetail(View):
         blog = get_object_or_404(queryset, slug=slug)
         comments = blog.comments.filter(approved=True).order_by("-created_on")
         thumb_up = False
-        if bog.thumb_up.filter(id=self.request.user.id).exists():
+        if blog.thumb_up.filter(id=self.request.user.id).exists():
             thumb_up = True
 
         return render(
             request,
-            "blog_details.html",
+            "recipes.html",
             {
                 "post": post,
                 "comments": comment,
-                "thumb_up": thumb_up
+                "thumb_up": thumb_up,
+                "comment_form": UserCommentForm()
             },
         )
-    def post_detail(request, id):
-       post_detail = get_object_or_404(Post, id=id)
+    def blog_details(request, id):
+       blog_details = get_object_or_404(Post, id=id)
        context = {
-          'post_detail': post_detail,
+          'blog_details': blog_details,
            }
        return render(request, 'blog_details.html', context)
 
@@ -58,6 +60,7 @@ def connect (request):
     return render(request,'connect.html')
 
 def askconfirm (request):
-    return render(request,'askconfirm.html')    
-    
-       
+    return render(request,'askconfirm.html')
+
+def blog_details (request):
+    return render(request, 'blog_details.html')
