@@ -18,17 +18,17 @@ class BlogDetail(View):
         queryset = RecipePost.objects.filter(status=1)
         blog = get_object_or_404(queryset, slug=slug)
         comments = blog.comments.filter(approved=True).order_by("-created_on")
-        thumb_up = False
-        if blog.thumb_up.filter(id=self.request.user.id).exists():
-            thumb_up = True
+        # thumb_up = False
+        # if blog.thumb_up.filter(id=self.request.user.id).exists():
+        #     thumb_up = True
 
         return render(
             request,
             "blog_details.html",
             {
-                "post": post,
-                "comments": comment,
-                "thumb_up": thumb_up,
+                # "post": post,
+                "comments": comments,
+                # "thumb_up": thumb_up,
                 "comment_form": UserCommentForm()
             },
         )

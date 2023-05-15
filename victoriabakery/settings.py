@@ -157,7 +157,7 @@ STATICFILES_DIRS = [
  ]
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'image')
-MEDIA_URL = '/images/'
+MEDIA_URL = 'media/'
 DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 
 # Default primary key field type
