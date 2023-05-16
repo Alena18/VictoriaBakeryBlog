@@ -14,5 +14,7 @@ urlpatterns = [
     path('connect.html', views.connect, name='connect'),
     path('askconfirm.html', views.askconfirm, name='askconfirm'),
     path('blog_details.html', views.blog_details, name='blog_details'),
+    path('like/<slug:slug>', views.PostLike.as_view(), name='blog_like'),
+    path('like/<slug:slug>', views.PostDisLike.as_view(), name='blog_dislike'),
 
 ]

@@ -12,7 +12,7 @@ class RecipePost(models.Model):
     updated_on = models.DateTimeField(auto_now=True)
     created_on = models.DateTimeField(auto_now_add=True)
     ingredients = models.TextField(blank=True)
-    content = models.TextField()
+    content = models.TextField(blank=True)
     author = models.ForeignKey(
         User, on_delete=models.CASCADE, related_name="blog_posts"
     )
@@ -21,8 +21,8 @@ class RecipePost(models.Model):
     read_time = models.IntegerField(default=0)
     timestamp = models.DateTimeField(auto_now=False, auto_now_add=True)    
     status = models.IntegerField(choices=STATUS, default=0)
-    # thumb_up = models.IntegerField(default=0)
-    # thumb_down = models.IntegerField(default=0)
+    thumb_up = models.ManyToManyField(User, blank=True)
+    thumb_down = models.IntegerField(User, blank=True)
 
     def read_time(self):
       result = readtime.of_text(self.content)
@@ -34,6 +34,11 @@ class RecipePost(models.Model):
     def __str__(self):
         return self.title
 
+    def number_of_likes(self):
+        return self.thumb_up.count()
+
+    def number_of_dislikes(self):
+        return self.thumb_down.count()
 
 class UserComment(models.Model):
     blog = models.ForeignKey(RecipePost, on_delete=models.CASCADE,
