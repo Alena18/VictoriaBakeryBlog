@@ -31,7 +31,7 @@ DEBUG = os.environ.get("DEBUG", True)
 
 ALLOWED_HOSTS = [
     'victoria-bakery-blog.herokuapp.com', 'localhost',
-    '8000-alena18-victoriabakerybl-sasvsmdzy9.us2.codeanyapp.com',
+    '8000-alena18-victoriabakerybl-aj7amfmftp.us2.codeanyapp.com',
 ]
 
 

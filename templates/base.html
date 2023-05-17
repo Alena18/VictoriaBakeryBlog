@@ -30,9 +30,15 @@
               <div class="col-sm">
                 <a href="{% url 'tips' %}">Tips and tricks</a>
               </div>
+              {% if user.is_authenticated %}
               <div class="col-sm sign_up">
                 <a href="{% url 'sign_up' %}">Sign-up/Log out</a>
               </div>
+              {% else %}
+              <div class="col-sm sign_up">
+                <a href="{% url 'sign_up' %}">Sign-up/Log in</a>
+              </div>
+              {% endif %}
               <div class="col-sm">
                 <a href="{% url 'connect' %}">Ask me</a>
               </div>

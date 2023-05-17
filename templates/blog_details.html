@@ -32,45 +32,7 @@
                 <p class="card-text ">
                     {{ blog.content | safe }}
                 </p>
-                <div class="row">
-
-                    <div class="col-1">
-                        <strong>
-                            {% if user.is_authenticated %}
-                            <form class="d-inline" action="{% url 'blog_like' blog.slug %}"  method="POST">
-                                {% csrf_token %}
-                                {% if liked %}
-                                <button type="submit" name="blogpost_id" value="{{blog.slug}}" class="btn-like"><i class="fa-solid fa-thumbs-up"></i></button>
-                                {% else %}
-                                <button type="submit" name="blogpost_id" value="{{blog.slug}}" class="btn-like"><i class="fa-regular fa-thumbs-up"></i></button>
-                                {% endif %}
-                            </form>
-                            {% else %}
-                            <span class="text-secondary"><i class="fa-regular fa-thumbs-up"></i></span>
-                            {% endif %}
-                        <!-- The number of likes goes before the closing strong tag -->
-                        <span class="text-secondary">{{ blog.number_of_likes }} </span>
-                        </strong>
-                    </div>
-                    <div class="col-1">
-                        <strong>
-                            {% if user.is_authenticated %}
-                            <form class="d-inline" action="{% url 'blog_dislike' blog.slug %}" method="POST">
-                                {% csrf_token %}
-                                {% if disliked %}
-                                <button type="submit" name="blogpost_id" value="{{blog.slug}}" class="btn-like"></button>
-                                {% else %}
-                                <button type="submit" name="blogpost_id" value="{{blog.slug}}" class="btn-like"></i></button>
-                                {% endif %}
-                            </form>
-                            {% else %}
-                            <span class="text-secondary"></span>
-                            {% endif %}
-                        <!-- The number of likes goes before the closing strong tag -->
-                        <span class="text-secondary">{{ blog.number_of_dislikes }} </span>
-                        </strong>
-                    </div>                    
-                    <div class="col-1">
+                <div class="col-1">
                         {% with comments.count as total_comments %}
                         <strong class="text-secondary"><i class="far fa-comments"></i>
                             <!-- Our total_comments variable goes before the closing strong tag -->

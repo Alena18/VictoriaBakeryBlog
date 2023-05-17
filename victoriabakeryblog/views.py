@@ -18,12 +18,7 @@ class BlogDetail(View):
         queryset = RecipePost.objects.filter(status=1)
         blog = get_object_or_404(queryset, slug=slug)
         comments = blog.comments.filter(approved=True).order_by("-created_on")
-        thumb_up = False
-        if blog.thumb_up.filter(id=self.request.user.id).exists():
-            thumb_up = True
-        thumb_down = False
-        if blog.thumb_down.filter(id=self.request.user.id).exists():
-            thumb_down = True    
+ 
 
         return render(
             request,
@@ -32,8 +27,6 @@ class BlogDetail(View):
                 "blog": blog,
                 "comments": comments,
                 "commented": False,
-                "liked": liked,
-                "disliked": disliked,
                 "comment_form": UserCommentForm()
             },
         )
@@ -42,12 +35,6 @@ class BlogDetail(View):
         queryset = RecipePost.objects.filter(status=1)
         blog = get_object_or_404(queryset, slug=slug)
         comments = blog.comments.filter(approved=True).order_by("-created_on")
-        thumb_up = False
-        if blog.thumb_up.filter(id=self.request.user.id).exists():
-            thumb_up = True
-        thumb_down = False
-        if blog.thumb_down.filter(id=self.request.user.id).exists():
-            thumb_down = True
             
         comment_form = UserCommentForm(data=request.POST)
 
@@ -67,8 +54,6 @@ class BlogDetail(View):
                 "blog": blog,
                 "comments": comments,
                 "commented": True,
-                "liked": liked,
-                "disliked": disliked,
                 "comment_form": UserCommentForm()
             },
         )
@@ -79,28 +64,6 @@ class BlogDetail(View):
           'blog_details': blog_details,
            }
        return render(request, 'blog_details.html', context)
-
-class PostLike(View):
-
-    def post(self, request, slug, *args, **kwargs):
-        blog = get_object_or_404(Post, slug=slug)
-        if blog.thumb_up.filter(id=request.user.id).exists():
-            blog.thumb_up.remove(request.user)
-        else:
-            blog.thumb_up.add(request.user)
-
-        return HttpResponseRedirect(reverse('blog_details', args=[slug]))
-
-class PostDisLike(View):
-
-    def post(self, request, slug, *args, **kwargs):
-        blog = get_object_or_404(Post, slug=slug)
-        if blog.thumb_down.filter(id=request.user.id).exists():
-            blog.thumb_down.remove(request.user)
-        else:
-            blog.thumb_down.add(request.user)
-
-        return HttpResponseRedirect(reverse('blog_details', args=[slug]))
 
 
 def index (request):
